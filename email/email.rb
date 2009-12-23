@@ -5,7 +5,7 @@ require "net/smtp"
 require "getoptlong"
 
 class Mailer
-	attr_accessor :body,:server,:from,:to, :subject, :name, :userId, :password
+	attr_accessor :body,:server,:from,:to, :subject, :name
 
 	def initialize
 		random = sprintf("%08X",rand(1000000000))
@@ -31,14 +31,20 @@ class Mailer
 				:data => data
 				}
 			    )
-		puts data
 	end
 
-	def sendGMAIL
+	def sendGMAIL(user,password)
 	    Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)  
-		Net::SMTP.start('smtp.gmail.com', 587, 'gmail.com', @userId,@password, :login) do |smtp|  
+		Net::SMTP.start('smtp.gmail.com', 587, 'gmail.com', user,password, :login) do |smtp|  
 			smtpSend(smtp)
 		end
+	end
+	
+	def send(server)
+		Net::SMTP.disable_tls
+		smtp=Net::SMTP.new(server)
+		smtp.start
+		smtpSend(smtp)
 	end
 
 
@@ -86,8 +92,8 @@ class Mailer
 
 				end
 			end
+
+			_smtp.write("--#{@boundary}--\r\n") if (@attachments.length > 0)
 		end 
 	end # smtpSend
 end
-
-
