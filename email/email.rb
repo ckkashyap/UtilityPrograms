@@ -50,7 +50,7 @@ class Mailer
 
 	def smtpSend(smtp)
 		smtp.ready(@from, @to) do |_smtp|
-			_smtp.write("Reply-To: @from\r\n")
+			_smtp.write("Reply-To: #{@from}\r\n")
 			_smtp.write("To: #{@to}\r\n")
 			_smtp.write("From: #{@name} <#{@from}>\r\n")
 			_smtp.write("Subject: #{@subject}\r\n")
