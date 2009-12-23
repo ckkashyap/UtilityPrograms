@@ -16,7 +16,7 @@ class Mailer
 	end
 
 	def attach(fileName)
-		raise "#{fileName} not a JPEG" unless(/jpe?g$/.match(fileName))
+#raise "#{fileName} not a JPEG" unless(/jpe?g$/.match(fileName))
 		data=[
 			File.open(fileName,"rb") do |f|
 				data=f.read
@@ -26,10 +26,12 @@ class Mailer
 		].pack("m*")
 		@attachments.push(
 				{
+				:type => "image/jpg",
 				:name => File.basename(fileName),
 				:data => data
 				}
 			    )
+		puts data
 	end
 
 	def sendGMAIL
@@ -48,13 +50,44 @@ class Mailer
 			_smtp.write("Subject: #{@subject}\r\n")
 			_smtp.write("MIME-Version: 1.0\r\n")
 
-			_smtp.write("Content-Type: text/html; charset=iso-8859-1\r\n")
-			_smtp.write("Content-Transfer-Encoding: 8bit\r\n")
+
+			if (@attachments.length > 0)
+				_smtp.write("Content-Type: multipart/mixed; boundary=\"#{@boundary}\"\r\n")
+				_smtp.write("\r\n")
+				_smtp.write("This is a multi-part message\r\n")
+				_smtp.write("\r\n")
+			end
+
+			if (@attachments.length > 0)
+				_smtp.write("--#{@boundary}\r\n")
+				_smtp.write("Content-Type: text/html; charset=\"iso-8859-1\"\r\n")
+				_smtp.write("Content-Transfer-Encoding: 8bit\r\n")
+			else
+				_smtp.write("Content-Type: text/html; charset=iso-8859-1\r\n")
+				_smtp.write("Content-Transfer-Encoding: 8bit\r\n")
+			end
+
 			_smtp.write("\r\n")
 			_smtp.write("#{@body}\r\n")
 			_smtp.write("\r\n")
-		end
-	end
+
+
+
+			if (@attachments.length > 0)
+				@attachments.each do |part|
+					_smtp.write("--#{@boundary}\r\n")
+					_smtp.write("Content-Id: <dingobingo>\r\n")
+					_smtp.write("Content-Type: #{part[:type]}; name=\"#{part[:name]}\"\r\n")
+					_smtp.write("Content-Transfer-Encoding: base64\r\n")
+					_smtp.write("Content-Disposition: inline; filename=\"#{part[:name]}\";\r\n")
+					_smtp.write("\r\n")
+					_smtp.write("#{part[:data]}")  
+					_smtp.write("\r\n")
+
+				end
+			end
+		end 
+	end # smtpSend
 end
 
 
