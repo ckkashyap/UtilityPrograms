@@ -76,7 +76,7 @@ class Mailer
 			if (@attachments.length > 0)
 				@attachments.each do |part|
 					_smtp.write("--#{@boundary}\r\n")
-					_smtp.write("Content-Id: <dingobingo>\r\n")
+					_smtp.write("Content-Id: <#{part[:name]}>\r\n") # In the HTML, use src="cid:theid"
 					_smtp.write("Content-Type: #{part[:type]}; name=\"#{part[:name]}\"\r\n")
 					_smtp.write("Content-Transfer-Encoding: base64\r\n")
 					_smtp.write("Content-Disposition: inline; filename=\"#{part[:name]}\";\r\n")
