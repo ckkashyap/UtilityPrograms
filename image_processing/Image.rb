@@ -12,7 +12,7 @@ class Image
 			raise "Not a PNM file" unless /^P6$/.match(file.gets)
 			loop do
 				line=file.gets
-				next if /^#/
+				next if /^#/.match(line)
 				if /^\d+ \d+/.match(line)
 					(@width,@height)=line.split(/ /).map! {|e| e.to_i}
 				else
@@ -49,4 +49,27 @@ class Image
 		c
 	end
 
+
+	def applyFunction
+		@width.times do |x|
+			@height.times do |y|
+				(r,g,b)=self[x,y].unpack("C*")
+				(r,g,b)=(yield x,y,r,g,b).map! {|c| Image.normalizeColor c}
+				self[x,y]=[r,g,b].pack("C*")
+			end
+		end
+	end
+
+	def applyImage(image,ox=0,oy=0,tr=255,tg=255,tb=255)
+		image.width.times do |x|
+			image.height.times do |y|
+				next if y+oy >= @height || x+ox >= @width
+				(ri,gi,bi)=image[x,y].unpack("C*")
+				next if ri==tr && gi==tg && bi==tb
+				(rc,gc,bc)=self[x+ox,y+oy].unpack("C*")	
+				(rc,gc,bc)=(yield x,y,ri,gi,bi,rc,gc,bc).map! {|c| Image.normalizeColor c}
+				self[x+ox,y+oy]=[rc,gc,bc].pack("C*")
+			end
+		end
+	end
 end
