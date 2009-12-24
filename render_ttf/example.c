@@ -17,7 +17,7 @@
 int width_used=0;
 int height_used=0;
 
-#define FONT_HEIGHT (20)
+#define FONT_HEIGHT (40)
 #define BORDER (20)
 
 
