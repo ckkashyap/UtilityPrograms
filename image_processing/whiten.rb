@@ -4,7 +4,7 @@ def whiten(image)
 	px=image.width/2
 	py=image.height/2
 	max_distance=Math.sqrt((px*px) + (py*py))/1.1
-	max_distance=image.height/2-5
+	max_distance=image.height/2-1
 	image.applyFunction do |x,y,r,g,b|
 		distance=Math.sqrt((x-px)*(x-px) + (y-py)*(y-py))
 		fraction=distance/max_distance

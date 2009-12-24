@@ -2,7 +2,7 @@ require 'Image'
 
 def superImpose(image1,image2,strength,ox=0,oy=0)
 	strengthInverse=1-strength
-	image1.applyImage(image2) do |x,y,ri,gi,bi,rc,gc,bc|
+	image1.applyImage(image2,ox,oy) do |x,y,ri,gi,bi,rc,gc,bc|
 		raise "DINGI" if rc.nil?
 		(red,blue,green)=[[ri,rc],[gi,gc],[bi,bc]].map! do |i|
 			strength*i[0] + strengthInverse*i[1]
