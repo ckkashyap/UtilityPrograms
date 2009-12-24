@@ -13,13 +13,16 @@ class Image
 		debug "Reading #{@fileName}"
 		File.open(@fileName,"r") do |file|
 			file.binmode
-			debug file.gets #P6
-			debug file.gets #comment
-			line=file.gets
-			debug file.gets #255
-			(width,height)=line.split(/ /)
-			@width=width.to_i
-			@height=height.to_i
+			raise "Not a PNM file" unless /^P6$/.match(file.gets)
+			loop do
+				line=file.gets
+				next if /^#/
+				if /^\d+ \d+/.match(line)
+					(@width,@height)=line.split(/ /).map! {|e| e.to_i}
+				else
+					break
+				end
+			end
 			debug "Width=#{@width} Height=#{@height}"
 			@buffer=file.read(@width*@height*3)
 		end
@@ -29,7 +32,6 @@ class Image
 		File.open(fileName,"w") do |file|
 			file.binmode
 			file.puts "P6"
-			file.puts "# Comment"
 			file.puts "#{@width} #{@height}"
 			file.puts "255"
 			file.write @buffer
@@ -84,16 +86,16 @@ ARGV.each do |arg|
 	arguments[key]=val
 end
 
-inputImage=arguments["input"] || (raise "No input image provided")
-superImposeImage=arguments["superimpose"] || (raise "No superimpose image provided")
+inputImage=arguments["input"] 
+superImposeImage=arguments["superimpose"] 
 outputImage=arguments["output"] || "out.pnm"
-percentage=(arguments["%"] || "50").to_i/100.0
+percentage=(arguments["%"] || "30").to_i/100.0
 ox=arguments["offset_x"] || 0
 oy=arguments["offset_y"] || 0
 
 
-transparency=Image.new(superImposeImage)
 image=Image.new(inputImage)
+transparency=Image.new(superImposeImage)
 
 image.superimpose(transparency,percentage,ox,oy)
 image.write outputImage
