@@ -3,16 +3,10 @@ def debug(message)
 end
 
 class Image
+	attr_accessor :width,:height
 	def initialize(fileName)
 		@fileName=fileName
 		read
-	end
-
-	def height
-		@height
-	end
-	def width
-		@width
 	end
 
 	def read
@@ -52,20 +46,28 @@ class Image
 		return @buffer[offset,3]
 	end
 
-	def superimpose(image,strength)
+
+	def normalize(c)
+		c=0 if c<0
+		c=255 if c>255
+		c
+	end
+
+	def superimpose(image,strength,ox=0,oy=0)
 		strengthInverse=1-strength
 		image.width.times do |x|
 			image.height.times do |y|
 				imageColor=image[x,y]
-				color=self[x,y]
+				color=self[x+ox,y+oy]
 				(rc,gc,bc)=color.unpack("C*")
 				(ri,gi,bi)=imageColor.unpack("C*")
 				next if ri==255 && gi==255 && bi==255
 
-				red=strength*ri+strengthInverse*rc
-				green=strength*gi+strengthInverse*gc
-				blue=strength*bi+strengthInverse*bc
-				self[x,y]=[red,green,blue].pack("C*")
+				(red,blue,green)=[[ri,rc],[gi,gc],[bi,bc]].map! do |i|
+					normalize (strength*i[0] + strengthInverse*i[1])
+				end
+
+				self[x+ox,y+oy]=[red,green,blue].pack("C*")
 			end
 		end
 	end
@@ -74,17 +76,25 @@ end
 
 
 # To superimpose image1 on image2 and produce image3
-# ruby superimpose.rb image1 image2 image3 percentage
+# ruby superimpose.rb image1 image2 image3 percentage 
+#
+arguments={}
+ARGV.each do |arg|
+	(key,val)=arg.split(/=/)
+	arguments[key]=val
+end
 
-image1=ARGV[0]
-image2=ARGV[1]
-image3=ARGV[2] || "out.pnm"
-percentage=ARGV[3] || 50
-percentage=percentage/100.0
+inputImage=arguments["input"] || (raise "No input image provided")
+superImposeImage=arguments["superimpose"] || (raise "No superimpose image provided")
+outputImage=arguments["output"] || "out.pnm"
+percentage=(arguments["%"] || "50").to_i/100.0
+ox=arguments["offset_x"] || 0
+oy=arguments["offset_y"] || 0
 
-transparency=Image.new(image1)
-image=Image.new(image2)
 
-image.superimpose(transparency,percentage)
-image.write image3
+transparency=Image.new(superImposeImage)
+image=Image.new(inputImage)
+
+image.superimpose(transparency,percentage,ox,oy)
+image.write outputImage
 
