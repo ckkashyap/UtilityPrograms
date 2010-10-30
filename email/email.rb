@@ -97,3 +97,21 @@ class Mailer
 		end 
 	end # smtpSend
 end
+
+
+x=Mailer.new
+
+		@server = @subject = @from = @to = @body = @name = ""
+x.subject="HELLO"
+x.from="alibaba"
+x.to="ckkashyap@gmail.com"
+x.body='<HTML><H1>HELLO</H1><img src="cid:abc.jpg"></img></HTML>'
+x.attach("abc.jpg")
+
+password="#########"
+
+x.sendGMAIL("ckkashyap",password)
+x.to="ck_kashyap@yahoo.com"
+x.sendGMAIL("ckkashyap",password)
+x.to="ckk@yahoo-inc.com"
+x.sendGMAIL("ckkashyap",password)
