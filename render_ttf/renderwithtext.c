@@ -14,8 +14,13 @@ void render(char *message,char *specialText){
 	while(*message){
 		c=message[0];
 		message++;
+		specialTextIndex=0;
 
 
+		if(c==' '){
+			X+=50;
+			continue;
+		}
 		for(outer_y=10,outer_r=0;outer_y<10+(8*10);outer_y+=10,outer_r++){
 			outer_font=fontdata_8x8[(c*8)+outer_r];
 			for(outer_x=X;outer_x<(X+(8*10));outer_x+=10){
@@ -38,14 +43,17 @@ void render(char *message,char *specialText){
 
 	printf("P6\n");
 	printf("# Comment\n");
-	printf("%d %d\n",WIDTH,HEIGHT);
+	printf("%d %d\n",X,HEIGHT);
 	printf("255\n");
 
 	for ( i = 0; i < HEIGHT; i++ )
 	{
-		for ( j = 0; j < WIDTH; j++ ){
+		for ( j = 0; j < X; j++ ){
 			c=255-image[j][i];
-			printf("%c%c%c",c,c,c);
+			if(c==0)
+			printf("%c%c%c",255,50,50);
+			else 
+			printf("%c%c%c",255,255,255);
 		}
 	}
 
