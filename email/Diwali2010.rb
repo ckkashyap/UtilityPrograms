@@ -1,4 +1,3 @@
-
 require 'tlsmail'
 require 'time'
 require "net/smtp"
@@ -138,13 +137,23 @@ END_OF_MESSAGE
 "#{html_start}#{msgstr}#{html_end}"
 end
 
+nameList = 
+[
+	["Kashyap","ckkashyap@gmail.com"],
+	["Dad","ckvijayaraghavan@gmail.com"],
+]
+
 
 x=Mailer.new
-x.subject="Happy Diwali Kashyap"
-x.from="alibaba"
-x.to="ckkashyap@gmail.com"
-x.body=getMessage("Kashyap")
 
 password=`cat password.txt`
+nameList.each do |entry|
+	(name,email)=entry
+	x.subject="Happy Diwali #{name}"
+	x.from="ckkashyap@gmail.com"
+	x.to=email
+	x.body=getMessage(name)
 
-x.sendGMAIL("ckkashyap",password)
+
+	x.sendGMAIL("ckkashyap",password)
+end
