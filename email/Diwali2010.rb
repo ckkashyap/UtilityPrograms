@@ -143,6 +143,7 @@ nameList =
 	["KASHYAP","ckkashyap@gmail.com"],
 	["Rishi","ck_kashyap@yahoo.com"],
 	["Nikita","ckkashyap@gmail.com"],
+	["Dad","ckvijayaraghavan@gmail.com"],
 ]
 
 
@@ -161,4 +162,5 @@ nameList.each do |entry|
 
 
 	x.sendGMAIL("ckkashyap",password)
+	puts "Done Sending to #{name} #{email}"
 end
