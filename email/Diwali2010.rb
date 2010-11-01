@@ -152,7 +152,7 @@ nameList=[
 	["manjucharan@in.ibm.com","Charan"],
 	["shrutiujjwal@gmail.com","Shruti"],
 	["pranam.sreedhar@in.ibm.com","Pranam"],
-	["swathi.rao@in.ibm.com","Swathi"],
+	["swathi.brahma@gmail.com","Swathi"],
 	["prathiba.r@in.ibm.com","Prathibha"],
 	["komal.mirchandani@in.ibm.com","Komal"],
 	["siddharth.kaushal@gmail.com","Sid"],
@@ -237,7 +237,9 @@ nameList=[
 	["sandeep.kohli@in.ibm.com","Sandeep"],
 	["amrmalli@in.ibm.com","Amrapalli"],
 	["seuppala@in.ibm.com","Seshaiah"],
-	["vizsriva@in.ibm.com","Vizeet"],
+	["vizeet@gmail.com","Vizeet"],
+	["avinash.bonu@gmail.com","Avinash"],
+	["grajneesh@gmail.com","Rajneesh"],
 
 
 ######################### FRIENDS #####################"]","
@@ -314,6 +316,7 @@ nameList=[
 	["sanchetinirmal@gmail.com","Nirmal"],
 	["dk_jindal@yahoo.com","Deepak"],
 	["karthik_s_76@yahoo.com","Karthick"],
+	["arghajit@gmail.com","Basu"],
 
 
 ################ COTTONS
@@ -353,6 +356,86 @@ nameList=[
 	["gferns@yahoo.com","Genevieve"],
 	["vijaydevatha@gmail.com","Devatha"],
 	["sundawns@yahoo.com","Prabhat"],
+	["bmanish@gmail.com","Manish"],
+	["rpbasu2002@yahoo.co.in","Rituparna"],
+	["sankalpab@yahoo.com","Sanky"],
+	["shravan_charu@yahoo.com","Shravan"],
+	["manisha.choithwani@gmail.com","Manisha"],
+	["manish_chugtu@yahoo.com","Manish"],
+	["devaraj_das@yahoo.com","Devaraj"],
+	["mdas@c3i-INC.com","Manoranjan"],
+	["mishi_d@hotmail.com","Moushumi"],
+	["vikramd_1978@hotmail.com","VD"],
+	["ajay.eppili@gmail.com","Ajay"],
+	["roadsong@gmail.com","Chandra"],
+	["gk_gella@yahoo.com","Ganesh"],
+	["sudarshangx2010@email.iimcal.ac.in","GSU"],
+	["tcgoyal@yahoo.com","Tikam"],
+	["venkyks@yahoo.com","Venky"],
+
+	
+	
+
+	["hk05@harshak.com","Harsha"],
+	["raj@konylabs.com","Raj"],
+	["mallesh.kota@gmail.com","Malesh"],
+	["koulrahul@gmail.com","Koul"],
+	["minakshi_k@hotmail.com","Minakshi"],
+	["harshu41@yahoo.com","Harsha"],
+	["siamtea@gmail.com","John"],
+	["amitava.kundu@gmail.com","Amitava"],
+	["sethuraman.meiyappan@gmail.com","Sethu"],
+	["adrishm@hotmail.com","Adrish"],
+	["sdmarathe@yahoo.com","Marathe"],
+	["sanjay.mohan@gmail.com","Sanjay"],
+	["monts_357@yahoo.com","Saurabh"],
+	["mvss.perraju@gmail.com","Raju"],
+	["p.j.narayanan@gmail.com","Sir"],
+	["r_nayal@yahoo.com","Raman"],
+	["vinaypunnoose@yahoo.com","Vinay"],
+	["sudhakar_112@yahoo.com","Sudhakar"],
+	["pasokan@gmail.com","Asokan"],
+	["mukeshpoddar@gmail.com","Mukesh"],
+
+	["rdpotta@yahoo.com","Ramesh"],
+	["nutanpagadala@gmail.com","Nutan"],
+	["araina@umich.edu","Raina"],
+	["archana_27@yahoo.com","Archana"],
+	["anandramanathan@kpmg.com","Andy"],
+	["rana_hitesh@yahoo.com","Hitesh"],
+	["prathiba.ra@gmail.com","Prathiba"],
+	["vidya.reddy@gmail.com","Vidya"],
+	["raja.sangameshwar@gmail.com","Raja"],
+	["ankit.saran@gmail.com","Ankit"],
+	["mohammed.sha@sabre.com","Sha"],
+	["vijayontheweb@rediffmail.com","Vijay"],
+	["vignesh.shetty@gmail.com","Vignesh"],
+	["ricky.shoker@gmail.com","Inder"],
+	["jasmit.ahuja@gmail.com","Jasmit"],
+	["s_s_sood@hotmail.com","Sumit"],
+	["lakshmi.teeka@gmail.com","Lakshmi"],
+	["t_balajee@yahoo.com","Tub"],
+	["siddharth.toshniwal@gmail.com","Sito"],
+	["svaghani@cs.stanford.edu","Satyam"],
+	["harish.vajha@gmail.com","Harish"],
+	["sashi_kanth@hotmail.com","Sashikanth"],
+	["vinay.venkateswaran@gmail.com","Vinay"],
+	["madhav288@gmail.com","Vinay"],
+	["krishna@vmware.com","Yadp"],
+	["nishchal.verma@gmail.com","Nischal"],
+
+
+
+# SERANOVA
+	["suchismithab@yahoo.com","Suchi"],
+	["monishita@hotmail.com","Monishita"],
+
+
+# VIRTUSA
+	["shashi.bhusan@gmail.com","Sashi"],
+	["iampcb@gmail.com","Prabhat"],
+
+# YAHOO
 
 
 ]
