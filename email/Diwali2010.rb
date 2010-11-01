@@ -135,33 +135,33 @@ html_end=<<END_OF_MESSAGE
 </body>
 </HTML>
 END_OF_MESSAGE
-"#{html_start}#{msgstr}#{html_end}"
+"#{html_start}#{msgstr}</font><BR>PS: Spellings may be a little off, but its the thought that counts :) Please also note that I've used the letters of your name to write Happy Diwali#{html_end}"
 end
 
 nameList=[
 
 ############## YAHOO
 
-["mkiyer@yahoo-inc.com","Maha"],
-["karams@yahoo-inc.com","Karam"],
-["asifch@yahoo-inc.com","Asif"],
-["njana@yahoo-inc.com","Jana"],
-["rjalan@yahoo-inc.com","Rohit"],
-["murtha@yahoo-inc.com","Arvind"],
-["rbala@yahoo-inc.com","Rahesh"],
-["sriguru@yahoo-inc.com","Sriguru"],
-["jyotin@yahoo-inc.com","Jyoti"],
-["vartika@yahoo-inc.com","Vartika"],
-["sumaja@yahoo-inc.com","Suma"],
-["haseeba@yahoo-inc.com","Haseeba"],
-["renuka@yahoo-inc.com","Renuka"],
-["ppandu@yahoo-inc.com","Priya"],
-["varshas@yahoo-inc.com","Varsha"],
-["pgupta@yahoo-inc.com","Prosenjit"],
-["cheruvv@yahoo-inc.com","Vishnu"],
-["amreen@yahoo-inc.com","Amrin"],
-["vijuv@yahoo-inc.com","Viju"],
-["vigeesh@yahoo-inc.com","Vijeesh"],
+	["mkiyer@yahoo-inc.com","Maha"],
+	["karams@yahoo-inc.com","Karam"],
+	["asifch@yahoo-inc.com","Asif"],
+	["njana@yahoo-inc.com","Jana"],
+	["rjalan@yahoo-inc.com","Rohit"],
+	["murtha@yahoo-inc.com","Arvind"],
+	["rbala@yahoo-inc.com","Rahesh"],
+	["sriguru@yahoo-inc.com","Sriguru"],
+	["jyotin@yahoo-inc.com","Jyoti"],
+	["vartika@yahoo-inc.com","Vartika"],
+	["sumaja@yahoo-inc.com","Suma"],
+	["haseeba@yahoo-inc.com","Haseeba"],
+	["renuka@yahoo-inc.com","Renuka"],
+	["ppandu@yahoo-inc.com","Priya"],
+	["varshas@yahoo-inc.com","Varsha"],
+	["pgupta@yahoo-inc.com","Prosenjit"],
+	["cheruvv@yahoo-inc.com","Vishnu"],
+	["amreen@yahoo-inc.com","Amrin"],
+	["vijuv@yahoo-inc.com","Viju"],
+	["vigeesh@yahoo-inc.com","Vijeesh"],
 
 
 ############### X RFT ###################
@@ -415,7 +415,8 @@ nameList=[
 	["sanjay.mohan@gmail.com","Sanjay"],
 	["monts_357@yahoo.com","Saurabh"],
 	["mvss.perraju@gmail.com","Raju"],
-	["p.j.narayanan@gmail.com","Sir"],
+	["p.j.narayanan@gmail.com","Pjn Sir"],
+	[" jawahar@iiit.ac.in","Jawahar Sir"],
 	["r_nayal@yahoo.com","Raman"],
 	["vinaypunnoose@yahoo.com","Vinay"],
 	["sudhakar_112@yahoo.com","Sudhakar"],
@@ -465,11 +466,11 @@ nameList=[
 ]
 
 
-nameList=[
-["ckkashyap@gmail.com","name"],
-["ckkashyap@gmail.com","kashyap"],
-["ck_kashyap@yahoo.com","yahoo"],
-]
+#nameList=[
+#	["ckvijayaraghavan@gmail.com","Achanjee!!!"],
+#	["tkchitra@gmail.com","Mom!!!"],
+#	["ckrishi@microsoft.com","Rishi"],
+#]
 
 
 password=`cat password.txt`
