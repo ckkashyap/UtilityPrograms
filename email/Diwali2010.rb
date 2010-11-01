@@ -125,11 +125,12 @@ END_OF_MESSAGE
 msgstr=getdecoratedtext(msgstr)
 cc=getcolortext
 html_start=<<END_OF_MESSAGE
-<HTML> <body bgcolor="white"> <font face="Garamond"  size="7"> <i><b> <pre>
+<HTML>
+<body bgcolor="white"> <font size="7"><pre>
+<img src="cid:hello.jpg" align="baseline" border="0">
 END_OF_MESSAGE
 html_end=<<END_OF_MESSAGE
 </pre>
-</b></i>
 </font>
 </body>
 </HTML>
@@ -139,16 +140,20 @@ end
 
 nameList = 
 [
-	["Kashyap","ckkashyap@gmail.com"],
-	["Dad","ckvijayaraghavan@gmail.com"],
+	["KASHYAP","ckkashyap@gmail.com"],
+	["Rishi","ck_kashyap@yahoo.com"],
+	["Nikita","ckkashyap@gmail.com"],
 ]
 
-
-x=Mailer.new
 
 password=`cat password.txt`
 nameList.each do |entry|
 	(name,email)=entry
+	upcaseName=name.upcase
+	`./render "HAPPY DIWALI" #{upcaseName} > hello.pnm`;
+	`pnmtojpeg hello.pnm > hello.jpg`
+	x=Mailer.new
+	x.attach("hello.jpg")
 	x.subject="Happy Diwali #{name}"
 	x.from="ckkashyap@gmail.com"
 	x.to=email
