@@ -139,6 +139,31 @@ END_OF_MESSAGE
 end
 
 nameList=[
+
+############## YAHOO
+
+["mkiyer@yahoo-inc.com","Maha"],
+["karams@yahoo-inc.com","Karam"],
+["asifch@yahoo-inc.com","Asif"],
+["njana@yahoo-inc.com","Jana"],
+["rjalan@yahoo-inc.com","Rohit"],
+["murtha@yahoo-inc.com","Arvind"],
+["rbala@yahoo-inc.com","Rahesh"],
+["sriguru@yahoo-inc.com","Sriguru"],
+["jyotin@yahoo-inc.com","Jyoti"],
+["vartika@yahoo-inc.com","Vartika"],
+["sumaja@yahoo-inc.com","Suma"],
+["haseeba@yahoo-inc.com","Haseeba"],
+["renuka@yahoo-inc.com","Renuka"],
+["ppandu@yahoo-inc.com","Priya"],
+["varshas@yahoo-inc.com","Varsha"],
+["pgupta@yahoo-inc.com","Prosenjit"],
+["cheruvv@yahoo-inc.com","Vishnu"],
+["amreen@yahoo-inc.com","Amrin"],
+["vijuv@yahoo-inc.com","Viju"],
+["vigeesh@yahoo-inc.com","Vijeesh"],
+
+
 ############### X RFT ###################
 	["suma.byrappa@gmail.com","Suma"],
 	["prathima.nagesh@gmail.com","Prathima"],
@@ -435,7 +460,6 @@ nameList=[
 	["shashi.bhusan@gmail.com","Sashi"],
 	["iampcb@gmail.com","Prabhat"],
 
-# YAHOO
 
 
 ]
