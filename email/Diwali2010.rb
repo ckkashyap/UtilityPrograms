@@ -98,7 +98,7 @@ class Mailer
 end
 
 
-Colors=["red","green","blue","magenta","Crimson","DarkGreen","DarkCyan","DarkBlue","DarkGreen","DarkMagenta","DarkOliveGreen","Darkorange","DarkOrchid","DeepPink","Chartreuse","GreenYellow","Maroon","OrangeRed","SaddleBrown" ]
+Colors=["red","green","blue","magenta","Crimson","DarkGreen","DarkCyan","DarkBlue","DarkGreen","DarkMagenta","DarkOliveGreen","Darkorange","DarkOrchid","DeepPink","Maroon","OrangeRed","SaddleBrown" ]
 def getdecoratedtext(str)
     out=""
     str=`echo "#{str}" | perl garble.pl`
@@ -126,7 +126,7 @@ msgstr=getdecoratedtext(msgstr)
 cc=getcolortext
 html_start=<<END_OF_MESSAGE
 <HTML>
-<body bgcolor="white"> <font size="7"><pre>
+<body bgcolor="white"> <font size="6"><pre>
 <img src="cid:hello.jpg" align="baseline" border="0">
 END_OF_MESSAGE
 html_end=<<END_OF_MESSAGE
@@ -465,21 +465,28 @@ nameList=[
 ]
 
 
+nameList=[
+["ckkashyap@gmail.com","name"],
+["ckkashyap@gmail.com","kashyap"],
+["ck_kashyap@yahoo.com","yahoo"],
+]
+
+
 password=`cat password.txt`
 nameList.each do |entry|
 	(email,name)=entry
-	#upcaseName=name.upcase
-	#`./render "HAPPY DIWALI" #{upcaseName} > hello.pnm`;
-	#`pnmtojpeg hello.pnm > hello.jpg`
-	#x=Mailer.new
-	#x.attach("hello.jpg")
-	#x.subject="Happy Diwali #{name}"
-	#x.from="ckkashyap@gmail.com"
-	#x.to=email
-	#x.body=getMessage(name)
+	upcaseName=name.upcase
+	`./render "HAPPY DIWALI" #{upcaseName} > hello.pnm`;
+	`pnmtojpeg hello.pnm > hello.jpg`
+	x=Mailer.new
+	x.attach("hello.jpg")
+	x.subject="Happy Diwali #{name}"
+	x.from="ckkashyap@gmail.com"
+	x.to=email
+	x.body=getMessage(name)
 
 
-	#x.sendGMAIL("ckkashyap",password)
+	x.sendGMAIL("ckkashyap",password)
 	puts "Done Sending to #{name} #{email}"
 end
 
