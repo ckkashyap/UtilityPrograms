@@ -282,7 +282,7 @@ nameList=[
 	["rahul@alumni.fit.edu","Rahul"],
 
 
-	["anilkumar@sobha.co.in","Anil"],
+	["anil.kumar@sobha.com","Anil"],
 	["girishv@us.ibm.com","Girish"],
 	["rlatha@in.ibm.com","Latha"],
 	["ahanjura@gmail.com","Anubhav"],
@@ -472,6 +472,7 @@ nameList=[
 
 
 nameList=[
+	["anil.kumar@sobha.com","Anil"],
 ]
 
 
