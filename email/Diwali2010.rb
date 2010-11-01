@@ -462,15 +462,17 @@ nameList=[
 	["iampcb@gmail.com","Prabhat"],
 
 
+	["cskaushik11@yahoo.com","Shekhar"],
+	["ananthav@yahoo-inc.com","Anatha"],
+	["grajneesh@gmail.com","Rajneesh"],
+	["nehas1@yahoo-inc.com","Neha"],
+	["rraj@yahoo-inc.com","Rashmin"],
 
 ]
 
 
-#nameList=[
-#	["ckvijayaraghavan@gmail.com","Achanjee!!!"],
-#	["tkchitra@gmail.com","Mom!!!"],
-#	["ckrishi@microsoft.com","Rishi"],
-#]
+nameList=[
+]
 
 
 password=`cat password.txt`
