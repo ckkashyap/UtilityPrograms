@@ -473,10 +473,7 @@ nameList=[
 	["nehas1@yahoo-inc.com","Neha"],
 	["rraj@yahoo-inc.com","Rashmin"],
 
-]
 
-
-nameList=[
 	["aju.ajay12@gmail.com","Aju"],
 	["bothra.nishant@gmail.com","Nishant"],
 	["ajay.dahiya@hotmail.com","Ajay"],
@@ -511,6 +508,11 @@ nameList=[
 	["p_vajrala@yahoo.com","Pallavi"],
 	["vsatis@yahoo.com","Satish"],
 	["wasons@gmail.com","Amit"],
+
+]
+
+
+nameList=[
 
 ]
 
