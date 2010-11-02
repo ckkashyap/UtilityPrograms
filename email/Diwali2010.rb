@@ -162,6 +162,11 @@ nameList=[
 	["amreen@yahoo-inc.com","Amrin"],
 	["vijuv@yahoo-inc.com","Viju"],
 	["vigeesh@yahoo-inc.com","Vijeesh"],
+	["shailg@yahoo-inc.com","Shail"],
+	["abpatil@yahoo-inc.com","Abhishek Patil"],
+	["ssutrave@yahoo-inc.com","Srinivas"],
+	["aparthan@yahoo-inc.com","Ajit"],
+	["debadas@yahoo-inc.com","Debasish"],
 
 
 ############### X RFT ###################
@@ -472,7 +477,7 @@ nameList=[
 
 
 nameList=[
-	["anil.kumar@sobha.com","Anil"],
+
 ]
 
 
@@ -490,6 +495,7 @@ nameList.each do |entry|
 	x.body=getMessage(name)
 
 
+	puts "Sending to #{name}\n";
 	x.sendGMAIL("ckkashyap",password)
 	puts "Done Sending to #{name} #{email}"
 end
